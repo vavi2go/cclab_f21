@@ -1,0 +1,40 @@
+html {
+  height:100%;
+}
+
+body, p, h3 {
+  margin: 0px;
+}
+
+body {
+  background-color: orange;
+}
+
+div:hover {
+  background-color: white;
+}
+.box {
+  background-color: gray;
+  width: 200px;
+  height: 200px;
+  border-width: 2px;
+  border-color: purple;
+  border-style: solid;
+
+  margin: 100px;
+  padding: 20px;
+}
+
+.unique-box {
+  position: fixed;
+  right: 300px;
+  top: 100px;
+}
+
+.title {
+  background-color: purple;
+  color: white;
+}
+.description {
+  background-color: pink;
+}

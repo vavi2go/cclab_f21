@@ -1,0 +1,17 @@
+html {
+  height:100%;
+}
+
+p {
+  margin: 50px;
+}
+
+#box {
+  background-color: pink;
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  left: 50px;
+  top: 200px;
+}

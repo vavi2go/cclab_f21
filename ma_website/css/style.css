@@ -1,0 +1,16 @@
+h3 {
+  color: violet;
+  font-family: fantasy;
+}
+h2 {
+  color: violet;
+  font-family: fantasy;
+}
+p {
+  font-family: fantasy;
+  font-size: 12px;
+}
+
+#my-sentence {
+  background: rgba(255, 0, 0, 0.5);
+}

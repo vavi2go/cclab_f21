@@ -1,0 +1,58 @@
+body {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+p {
+  font-family: monospace;
+  font-size: 32px;
+}
+
+/* link style */
+a {
+  outline: none;
+  text-decoration: none;
+  color: rgb(255,0,0,0.5);
+  font-weight: bold;
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255,0,255,0.5);
+}
+
+/* selected link */
+a:active {
+  color: rgb(200,100,200,0.5);
+}
+
+/* link position */
+.page-style {
+  color: rgb(255,0,0,0.5);
+  position: absolute;
+  left: 50px;
+}
+
+.page-style1 {
+  color: rgb(255,0,0,0.5);
+    position: absolute;
+  left: 450px;
+}
+
+.page-style2 {
+  color: rgb(255,0,0,0.5);
+    position: absolute;
+  left: 850px;
+}
+
+.page-style3 {
+  color: rgb(255,0,0,0.5);
+  position: absolute;
+  left: 1250px;
+}
+
+img {
+  position: absolute;
+  left: 350px;
+  top: 175px;
+}
