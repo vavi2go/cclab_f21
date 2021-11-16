@@ -6,7 +6,7 @@ let jelly = [];
 let numberOfjelly = 1;
 
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(1000, 600);
   canvas.parent("jellycanvas");
   jelly.push(new jellybean(width / 2, height / 2));
 }
