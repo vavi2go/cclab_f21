@@ -1,11 +1,38 @@
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 #jellycanvas {
   position: absolute;
-  top: 50px;
-  left: 175px;
+  top: 100px;
+  left: 275px;
+}
+
+#interface {
+  position: absolute;
+  bottom: 50px;
   margin: 50px;
+  width: 50px;
+}
+
+input {
+width: 100px;
+}
+
+#interfaceAdd {
+  position: absolute;
+  left: 50px;
+  margin: 50px;
+}
+#interfaceRem {
+  position: absolute;
+  right: 50px;
+  margin: 50px;
+}
+
+p {
+  margin: 200px;
+  color: white;
 }

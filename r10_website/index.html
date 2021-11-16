@@ -3,13 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title>CCLab</title>
-    <link rel="stylesheet" href="css/style.css">
+      <!-- Connect CSS -->
+  <link rel="stylesheet" href="css/style.css">
+      <!-- Connect P5.js lib -->
   <script src="js/lib/p5.js" type="text/javascript"></script>
+
   </head>
   <body>
+    <!-- Connect P5.js script -->
+<script src="js/script.js" type="text/javascript"></script>
 
-    <!-- Add HTML Elements -->
+    <!-- Add P5.js sketch canvas-->
     <div id="jellycanvas"></div>
-    <script src="js/script.js" type="text/javascript"></script>
-  </body>
+
+
+    <div id="interface">
+      <!-- Add scalability interface-->
+      <input type="range" id="size" name="size" min="3" max="15">
+        <!-- Change canvas colour-->
+      <input id="colR" type="range" value="20" min="0" max="255"/>
+      <!-- Trickster slider -->
+      <input id="colG" type="range" value="20" min="0" max="255"/>
+        <!-- Change canvas colour-->
+      <input id="colB" type="range" value="20" min="0" max="255"/>
+    </div>
+
+
+    <!-- Add remowe jelly-->
+    <div id="interfaceAdd">
+      <button onclick="changeNumberA()" type="button">+</button>
+    </div>
+    <!-- Add remowe jelly-->
+    <div id="interfaceRem">
+      <button onclick="changeNumberR()" type="button">-</button>
+    </div>
+
+    <!-- reset -->
+    <div>
+      <input type="checkbox" id="reset" name="reset">
+    </div>
+
+    <p>W</p>
+    <p>N</p>
+
 </html>

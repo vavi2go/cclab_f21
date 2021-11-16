@@ -4,34 +4,69 @@
 
 let jelly = [];
 let numberOfjelly = 1;
+let sz;
+let add, remove = false;
+let r, b, check;
 
 function setup() {
-  let canvas = createCanvas(1000, 600);
+  let canvas = createCanvas(900, 500);
   canvas.parent("jellycanvas");
   jelly.push(new jellybean(width / 2, height / 2));
+
+  sz = document.getElementById("size"); //scale jellyfish
+  r = document.getElementById("colR");
+  b = document.getElementById("colB");
+
+}
+
+function changeNumberA(){
+  add = true;
+}
+
+function changeNumberR(){
+  remove = true;
 }
 
 function draw() {
-  //change backgroung settings
+
+  //change background settings
   if (key == "w") {
     background(200, 0, 200, 10);
+    canvas.style.border = "none";
   } else if (key == "n") {
     background(50);
+    canvas.style.border = "none";
   } else {
     background(255);
+    canvas.style.border = "solid";
+    canvas.style.borderColor = "gray";
+    canvas.style.borderWidth = "1px";
   }
 
+  let R = r.value;
+  let B = b.value;
+  let body = document.body;
+  check = document.getElementById("reset").checked;
+
+  if (check === true) {
+  body.style.backgroundColor = "rgb(255,255,255)";
+  } else {
+  body.style.backgroundColor = "rgb(" + R + ", 200, " + B +")";
+  }
+
+
   // generate jelly & kill jell
-  if (mouseIsPressed) {
-    if (mouseButton === RIGHT && numberOfjelly <= 12) {
-      jelly.push(new jellybean(random(0, width), random(height)));
+    if (add === true && numberOfjelly <= 15) {
+      jelly.push(new jellybean(random(width), random(height)));
       numberOfjelly = numberOfjelly + 1;
+      add = false;
     }
-    if (mouseButton === LEFT && jelly.length > 1) {
+
+    if (remove === true && jelly.length > 1) {
       jelly.splice(0, 1);
       numberOfjelly = numberOfjelly - 1;
+      remove = false;
     }
-  }
 
   //sustain one jelly if none on canvas
   if (jelly.length == 0) {
@@ -40,13 +75,14 @@ function draw() {
   }
 
   // update & display
+  let scal = sz.value; //scale jellyfish
   for (let i = 0; i < jelly.length; i++) {
     let j = jelly[i];
     j.checkframe();
-    j.update(i);
+    j.update(i, scal);
     j.display();
-  }
 
+  }
   // remove & add if jelly left canvas
   for (let i = jelly.length - 1; i >= 0; i--) {
     let j = jelly[i];
@@ -83,8 +119,9 @@ class jellybean {
     this.speedXY = 0;
     this.m = 0;
   }
-  update(dir) {
+  update(dir, scl) {
     this.dir = dir;
+    this.scl = 0.5+0.1*scl;
     this.move();
     this.colour();
     this.rotation();
@@ -118,7 +155,7 @@ class jellybean {
 
   display() {
     push();
-    scale(0.8);
+    scale(this.scl);
     translate(this.x, this.y);
     rotate(this.direction);
 
