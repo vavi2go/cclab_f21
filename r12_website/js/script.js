@@ -81,7 +81,7 @@ function draw() {
       if (style1 === true) {
           rotate(mouseX / 100);
       }
-      if (style3 === true){
+      if (style2 === true){
         rotate(angle);
       }
       triangle(cosValue, sinValue, cosValue-drag/2, drag + sinValue, cosValue + drag / 2, drag + sinValue);
@@ -90,7 +90,7 @@ function draw() {
   }
 
   //update rotation angle
-  if (key === "2") {
+  if (style2 === true) {
   angle = angle + 0.05;
   }
 }
