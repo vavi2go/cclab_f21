@@ -91,6 +91,6 @@ function draw() {
 
   //update rotation angle
   if (style2 === true) {
-  angle = angle + 0.05;
+  angle = angle + 0.01;
   }
 }
